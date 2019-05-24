@@ -1,0 +1,93 @@
+Game logic:
+
+A card has two pieces of info (Card info):
+    - face value (what's actually on the card)
+    - "turn" value (whether it's face up or down)
+
+Card Class
+1. Use instance variables to keep track of card info.
+2. Method to display information about the card:
+    2a. nothing when face down
+    2b. card value when face up
+3. Method to "hide" the card (turn it back face down)
+4. Method to "reveal" the card (turn the card face up)
+5. Methods "to_s" and "--" 
+    5a. to check whether the cards are equal (I assume)
+
+Board Class
+1. Board keeps track of the cards
+2. Need a grid instance variable to contain Cards (objects) Array.new(3) { Array.new(4, )}
+
+Useful Methods
+3. Populate - should fill the board with a set of shuffled Card pairs
+4. Render - should print out a representation of the Board's current state
+5. Won? - true if all cards are revealed
+6. Reveal should reveal a Card at #guessed_pos
+    6a. if the #guessed_pos is on a Card that is already face up, do nothing.
+    6b. it should also return the value of the card it just revealed
+7. May need to use parallel assignments here (x, y, z = 1, 2, 3) #=> (x = 1, y = 2, z = 3)
+
+Game Class(accept player classes)
+1. Should have instance variables for the Board and previously guessed_pos(if any)
+2. Methods for managing the Board-Player interaction
+3. Play loop that runs until the game is over
+    3a. inside this loop, we will render the board
+    3b. prompt the player for input (guessed_pos)
+    3c. pass this guessed_pos to a #make_guess Method
+    3d. #make_guess will handle memory / matching logic
+4. Make_guess method(guessed_pos)
+    4a. if this is the first Card we are looking at, leave it face up until
+        a second guess comes in.
+        4a1. update previous_guess instance variable
+    4b. if the Card we are checking is the second Card, compare the 
+        two Cards (guessed_pos & previous_guess)
+        4b1. if the cards match, leave them both face up
+        4b2. if the cards do not match, put them both face down
+        4b3. regardless of matching, reset previous_guess to nothing
+5. Run system("clear") before we #render the board (hides previous guesses)
+6. sleep(n) pauses the program for n seconds
+    6a. sleep for 2 seconds after incorrect guesses to allow players 2 seconds 
+        to see incorrect guesses
+
+Human_player Class
+1. Human_player class will handle
+    1a. prompt
+    1b. get_input
+-- both of these methods were originially in Game class
+
+Computer_player Class
+1. Computer_player class will handle
+    1a. prompt
+    1b. get_input
+    1c. receive_revealed_card
+        1c1. should take in a position and the value of the card revealed at that location.
+            store this info in a hash called "@known_cards"
+    1d. receive_match
+        1d1. should take in two positions which are a successful match.
+            store these in an instance variable "@matched_cards"
+
+-- both of these methods were originially in Game class
+
+Computer_player logic:
+1. on its first guess, if it knows where two matching cards are, guess one of them
+otherwise, guess randomly among cards it has not yet seen
+2. on its second guess, if its first guess revealed a card whose value matches
+a known location, guess that location, otherwise guess randomly among cards it has not 
+yet seen
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+

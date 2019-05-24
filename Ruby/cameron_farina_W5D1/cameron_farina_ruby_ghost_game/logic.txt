@@ -1,0 +1,34 @@
+Ghost is a written or spoken word game in which players take turns 
+adding letters to a growing word fragment, trying not to be the one to complete a valid word. 
+
+Each fragment must be the beginning of an actual word, and usually some minimum 
+is set on the length of a word that counts, such as three or four letters.
+
+The player who completes a word loses the round and earns a "letter" 
+(as in the basketball game horse), with players being eliminated when 
+they have been given all five letters of the word "ghost".
+
+1. we start the game
+2. randomize who goes first
+3. first player enters a letter (a guess)
+4. check if entered letter is a valid guess 
+5. if it is valid, add the player's guess to the fragment and switch to next player
+6. repeat steps 2-5
+
+
+game -- 
+    start the game
+        -- until the game is over
+            -- play a round
+
+        end when game is over
+
+    play a round
+        -- reset the fragment to an empty string
+        until the fragment is a legal word
+            -- each player takes a turns
+        end
+        a round ends with someone receiving a letter in "GHOST"
+
+        when someone loses a round, we need to update their score
+        with the next letter in "GHOST"
