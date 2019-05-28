@@ -32,17 +32,16 @@ class KnightPathFinder
     end
 
     def initialize(start_pos)
-        #debugger
         @start_pos = start_pos
         @considered_positions = [start_pos]
-
+        @root_node = nil
         self.build_move_tree
     end
 
     def build_move_tree
         self.root_node = PolyTreeNode.new(start_pos)
-        queue = [root_node]
-
+        queue = [self.root_node]
+        
         until queue.empty?
             current_node = queue.shift
             pos = current_node.value
@@ -51,8 +50,7 @@ class KnightPathFinder
             current_node.add_child(next_node)
             queue << next_node
             end
-        end
-        
+        end        
     end
 
     def new_move_positions(pos)
@@ -60,7 +58,23 @@ class KnightPathFinder
       .reject { |new_pos| @considered_positions.include?(new_pos) }
       .each { |new_pos| @considered_positions << new_pos }
     end
+
+    def find_path(end_pos)
+        end_node = self.root_node.bfs(end_pos)
+        self.trace_path_back(end_node).reverse
+    end
+
+    def trace_path_back(end_node)
+        nodes = []
+        
+        current_node = end_node
+        until root_node.value == current_node.value
+            nodes << current_node.value
+            current_node = current_node.parent
+        end
+        nodes + [root_node.value]
+    end
 end
 
-
-p KnightPathFinder.new([0,0])
+g = KnightPathFinder.new([0,0])
+p g.find_path([6,2])
