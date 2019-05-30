@@ -1,0 +1,24 @@
+Game class will be passed players & board
+ -- check current player, ask current player for their turn
+ -- switch players, ask new current player for their turn
+ -- check if game is over, if its not, go to the top of this loop
+
+Human player class
+-- ask current player for their turn 
+    -- get_move = gets.chomp -- convert answer to an array of positions
+    -- check with the board if its valid, if its not, ask for another user_guess
+    -- player can display the board
+    
+Computer player class
+-- ask current player for their turn 
+    -- get_move = gets.chomp -- convert answer to an array of positions
+        -- check if there are winning moves available, and play a winning move if it exists
+            -- player a random move if no winning move exists
+    -- check with the board if its valid, if its not, ask for another user_guess
+    -- player can display the board
+
+Board class
+-- create the board (grid instance)
+-- place mark
+-- determine if a move is valid
+-- over? - which checks if the game is over
