@@ -1,19 +1,24 @@
 require_relative "piece.rb"
 
 class NullPiece < Piece
-  #  attr_reader :color, :board, :position
+  include Singleton
 
-    def initialize(color = nil, board, position)
-        # @color = color
-        # @board = board
-        # @position = position
-        super(color, board, position)
+    attr_reader :color
+
+    def initialize
+        @color = nil
     end
 
-    # def moves
-    # end
+    def empty?
+       true
+    end
 
-    # def symbol
-    # end
+    def valid_moves
+       []
+    end
+
+    def symbol
+        " "
+    end
 
 end

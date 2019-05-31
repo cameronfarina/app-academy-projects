@@ -12,4 +12,5 @@ rows[2] - [5].each == nullpiece
 
 
 pieces:
-# ♖♜♘♟♔♕♗♙♞♝♜♛♚
+black_pieces: ♖ ♘ ♔ ♕ ♗ ♙
+white_pieces: ♜ ♟ ♞ ♝ ♜ ♛ ♚ 
