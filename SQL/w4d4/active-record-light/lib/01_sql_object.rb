@@ -1,10 +1,10 @@
 require_relative 'db_connection'
 require 'active_support/inflector'
-require 'byebug'
 # NB: the attr_accessor we wrote in phase 0 is NOT used in the rest
 # of this project. It was only a warm up.
 
 class SQLObject
+
   def self.columns
     return @columns if @columns
 
@@ -20,6 +20,7 @@ class SQLObject
 
   def self.finalize!
     self.columns.each do |column_name|
+      
       define_method(column_name) do
         self.attributes[column_name]
       end
@@ -68,7 +69,7 @@ class SQLObject
 
   def initialize(params = {})
       params.each do |attr_name, value|
-        if self.class.columns.include?(attr_name.to_sym)
+        if self.class.columns.include?(attr_name.to_sym) 
             self.send("#{attr_name}=", value)
         else
           raise "unknown attribute '#{attr_name}'"
@@ -117,6 +118,10 @@ class SQLObject
   end
 
   def save
-      self.update if id.nil?
+    if id.nil?
+      self.insert
+    else 
+      self.update
+    end
   end
 end
