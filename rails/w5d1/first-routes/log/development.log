@@ -2362,3 +2362,362 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 91ms (Views: 7.2ms | ActiveRecord: 52.7ms)
 
 
+Started GET "/users" for ::1 at 2019-06-18 18:38:24 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3
+Completed 200 OK in 108ms (Views: 32.5ms | ActiveRecord: 64.8ms)
+
+
+Started GET "/users" for ::1 at 2019-06-18 18:48:36 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 18676ms (Views: 29.2ms | ActiveRecord: 53.3ms)
+
+
+Started GET "/users/?mac" for ::1 at 2019-06-18 18:49:01 -0400
+Processing by UsersController#index as */*
+  Parameters: {"mac"=>nil}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 65132ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/?query" for ::1 at 2019-06-18 18:50:10 -0400
+Processing by UsersController#index as */*
+  Parameters: {"query"=>nil}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 431406ms (Views: 2.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/?mac" for ::1 at 2019-06-18 18:57:33 -0400
+Processing by UsersController#index as */*
+  Parameters: {"mac"=>nil}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 141ms (Views: 22.7ms | ActiveRecord: 100.6ms)
+
+
+Started GET "/users/?Billy" for ::1 at 2019-06-18 18:57:56 -0400
+Processing by UsersController#index as */*
+  Parameters: {"Billy"=>nil}
+  [1m[36mUser Load (40.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 49ms (Views: 6.9ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/users/?Billy" for ::1 at 2019-06-18 18:58:28 -0400
+Processing by UsersController#index as */*
+  Parameters: {"Billy"=>nil}
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 96ms (Views: 24.8ms | ActiveRecord: 56.5ms)
+
+
+Started GET "/users/?Billy" for ::1 at 2019-06-18 19:01:06 -0400
+Processing by UsersController#index as */*
+  Parameters: {"Billy"=>nil}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 36ms (Views: 6.4ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/users/?Billy" for ::1 at 2019-06-18 19:01:31 -0400
+Processing by UsersController#index as */*
+  Parameters: {"Billy"=>nil}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 32172ms (Views: 13.6ms | ActiveRecord: 40.7ms)
+
+
+Started GET "/users?Billy=" for ::1 at 2019-06-18 19:02:16 -0400
+Processing by UsersController#index as */*
+  Parameters: {"Billy"=>""}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 136003ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:04:36 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (13.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 21251ms (Views: 1.6ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:05:01 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username IS LIKE '%Billy%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 53348ms (ActiveRecord: 16.7ms)
+
+
+
+PG::SyntaxError - ERROR:  syntax error at or near "LIKE"
+LINE 1: SELECT "users".* FROM "users" WHERE (username IS LIKE '%Bill...
+                                                         ^
+:
+  app/controllers/users_controller.rb:9:in `index'
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:06:04 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username IS LIKE '%Billy%')[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 3.5ms)
+
+
+
+PG::SyntaxError - ERROR:  syntax error at or near "LIKE"
+LINE 1: SELECT "users".* FROM "users" WHERE (username IS LIKE '%Bill...
+                                                         ^
+:
+  app/controllers/users_controller.rb:8:in `index'
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:06:31 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (46.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%Billy%')[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 139ms (Views: 22.7ms | ActiveRecord: 88.4ms)
+
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:06:56 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"billy"}
+  [1m[36mUser Load (32.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%billy%')[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 35ms (Views: 2.1ms | ActiveRecord: 32.1ms)
+
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:08:11 -0400
+
+SyntaxError - syntax error, unexpected *
+/Users/larissa/code/app-academy-projects/rails/w5d1/first-routes/app/controllers/users_controller.rb:18: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+    end
+       ^:
+  app/controllers/users_controller.rb:10:in `'
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:08:19 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"billy"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%billy%')[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 99ms (Views: 14.3ms | ActiveRecord: 63.4ms)
+
+
+Started GET "/users?username=mac" for ::1 at 2019-06-18 19:08:29 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"mac"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%mac%')[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users?username=mac" for ::1 at 2019-06-18 19:08:46 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"mac"}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%mac%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 424606ms (Views: 4.5ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/users?username=mac" for ::1 at 2019-06-18 19:15:55 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"mac"}
+  [1m[36mUser Load (16.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 500 Internal Server Error in 56ms (Views: 14.6ms | ActiveRecord: 24.6ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/users_controller.rb:10:in `block in index'
+  app/controllers/users_controller.rb:5:in `index'
+
+Started GET "/users?username=mac" for ::1 at 2019-06-18 19:16:22 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"mac"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 78ms (Views: 16.4ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:16:31 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:16:38 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"billy"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:16:59 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"billy"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 126ms (Views: 22.6ms | ActiveRecord: 73.3ms)
+
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:17:17 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"billy"}
+  [1m[36mUser Load (30.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 143ms (Views: 11.7ms | ActiveRecord: 114.3ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:17:48 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 124047ms (Views: 13.3ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:20:08 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 95742ms (Views: 19.0ms | ActiveRecord: 38.8ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:22:30 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (20.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 200 OK in 89ms (Views: 16.5ms | ActiveRecord: 37.5ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:23:00 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 92ms (Views: 39.8ms | ActiveRecord: 33.9ms)
+
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:24:55 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"billy"}
+  [1m[36mUser Load (27.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%billy%')[0m
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 109ms (Views: 20.4ms | ActiveRecord: 69.5ms)
+
+
+Started GET "/users?username=bob" for ::1 at 2019-06-18 19:25:02 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"bob"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%bob%')[0m
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users?username=billy" for ::1 at 2019-06-18 19:28:02 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"billy"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%billy%')[0m
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 10ms (Views: 3.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users?username=aosiefnoseife" for ::1 at 2019-06-18 19:28:07 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"aosiefnoseife"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%')[0m
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users?username=aosiefnoseife" for ::1 at 2019-06-18 19:30:08 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"aosiefnoseife"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%')[0m
+  ↳ app/controllers/users_controller.rb:20
+Completed 200 OK in 54915ms (Views: 2.1ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/users?username=aosiefnoseife" for ::1 at 2019-06-18 19:31:28 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"aosiefnoseife"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%')[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 50ms (Views: 7.4ms | ActiveRecord: 9.3ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/users_controller.rb:19:in `index'
+
+Started GET "/users?username=aosiefnoseife" for ::1 at 2019-06-18 19:31:47 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"aosiefnoseife"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%')[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 200 OK in 36ms (Views: 1.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users?username=aosiefnoseife" for ::1 at 2019-06-18 19:32:06 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"aosiefnoseife"}
+  [1m[36mUser Load (23.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Exists (16.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (username ILIKE '%aosiefnoseife%') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%aosiefnoseife%')[0m
+  ↳ app/controllers/users_controller.rb:17
+Completed 200 OK in 41624ms (Views: 1.8ms | ActiveRecord: 56.5ms)
+
+
+Started GET "/users?username=aosiefnoseife" for ::1 at 2019-06-18 19:32:50 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"aosiefnoseife"}
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (username ILIKE '%aosiefnoseife%') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 52ms (Views: 13.8ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/users?username=Billy" for ::1 at 2019-06-18 19:32:54 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Billy"}
+  [1m[36mUser Exists (5.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (username ILIKE '%Billy%') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Load (43.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%Billy%')[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 200 OK in 55ms (Views: 2.5ms | ActiveRecord: 48.3ms)
+
+
+Started GET "/users?username=bill" for ::1 at 2019-06-18 19:33:00 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"bill"}
+  [1m[36mUser Exists (44.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (username ILIKE '%bill%') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Load (36.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username ILIKE '%bill%')[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 200 OK in 86ms (Views: 3.1ms | ActiveRecord: 80.8ms)
+
+
