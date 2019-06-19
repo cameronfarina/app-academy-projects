@@ -1,0 +1,27 @@
+<body>
+  <h1><%= @cats.name %></h1>
+  <table>
+    <tbody>
+        <tr>
+            <th>Attribtute</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><%= @cats.age %></td>
+        </tr>
+        <tr>
+            <td>Birth_Date</td>
+            <td><%= @cats.birth_date %></td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td><%= @cats.color.capitalize %></td>
+        </tr>
+        <tr>
+            <td>Sex</td>
+            <td><%= @cats.sex %></td>
+        </tr>
+    </tbody>
+  </table>
+</body>

@@ -1,0 +1,56 @@
+<% action = (cat.persisted? ? cat_url(cat) : cats_url) %>
+<% method = (cat.persisted? ? "PATCH" : "POST") %>
+<% button_text = (cat.persisted? ? "Update Cat" : "Create Cat") %>
+
+<form action="<%= action %>" method = "POST">
+  <input type="hidden" name="_method" value="<%= method %>">
+  
+<label for="name">Name</label>
+<input 
+  id="name" 
+  type="text" 
+  name="cat[name]"
+  value="<%= cat.name %>">
+<br>
+
+<label for="birth_date">Birth_Date</label>
+<input 
+  id="birth_date" 
+  type="date" 
+  name="cat[birth_date]"
+  value="<%= cat.birth_date %>">
+<br>
+
+<label for="color">Color</label>
+<select id="color" name="cat[color]">
+  <option disabled selected >-- select a color --</option>
+  <option value="orange" <%= cat.color == "orange" ? "selected" : "" %>>Orange</option>
+  <option value="black" <%= cat.color == "black" ? "selected" : "" %>>Black</option>
+  <option value="white" <%= cat.color == "white" ? "selected" : "" %>>White</option>
+  <option value="gray" <%= cat.color == "gray" ? "selected" : "" %>>Gray</option>
+</select>
+<br>
+
+<label for="sex">Sex</label>
+<input 
+  id="sex" 
+  type="radio" 
+  name="cat[sex]" 
+  value="F"
+  <%= cat.sex == "F" ? "checked" : "" %>>Female
+
+<input 
+  id="sex" 
+  type="radio" 
+  name="cat[sex]" 
+  value="M"
+  <%= cat.sex == "M" ? "checked" : "" %>>Male
+<br>
+
+<label>Description
+<textarea name="cat[description]"> <%= cat.description %> </textarea>
+</label>
+<br>
+
+<button><%= button_text %></button>
+</form>
