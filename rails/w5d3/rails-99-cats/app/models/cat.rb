@@ -4,7 +4,7 @@ class Cat < ApplicationRecord
   COLORS = ["orange", "white", "black", "gray"]
 
     validates :color, inclusion: COLORS
-    validates :sex, inclusion: ["M","F"]
+    validates :sex, inclusion: ["M", "F"]
     validates :name, :color, :birth_date, :sex, :description, presence: true
 
     has_many :cat_rental_requests,
