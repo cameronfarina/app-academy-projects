@@ -20,7 +20,7 @@ class CatRentalRequest < ApplicationRecord
 
   def no_overlap_requests
     unless self.overlapping_requests.empty?
-        raise "This overlaps a previous request for the same cat"
+        raise "This cat is not available on these dates"
     end
   end
 end
