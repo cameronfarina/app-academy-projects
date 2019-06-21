@@ -15,6 +15,7 @@
 
     <% if logged_in? %>
     <nav>
+      <a href="<%= bands_url %>">Take me Home</a>
       <div class="user-details">
         <p> Logged in as: <%= current_user.email %>
         <form action="<%= session_url %>" method="post">

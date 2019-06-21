@@ -1,6 +1,8 @@
 class BandsController < ApplicationController
+  before_action :require_user
+
   def index
-    @band = Band.all
+    @bands = Band.all
     render :index
   end
 

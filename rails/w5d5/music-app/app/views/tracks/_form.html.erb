@@ -1,0 +1,65 @@
+<% action_url = track.persisted? ? track_url(track) : tracks_url %>
+<% http_method = track.persisted? ? "PATCH" : "POST" %>
+
+<form action="<%= action_url %>" method="post">
+<input type="hidden" name="_method" value="<%=http_method%>">
+<%= auth_token %>
+
+<p>
+  <label for="track-name">Track Name</label>
+  <input 
+    type="text" 
+    name="track[name]" 
+    id="track-name" 
+    value="<%= track.name %>">
+</p>
+
+<p>
+  <label for="track-album">Album Name</label>
+  <select 
+    type="text" 
+    name="track[album_id]"
+    id="track-album">
+
+    <% Album.all.each do |album|%>
+      <option
+        <%= "selected" if track.album_id == album.id %>
+        value="<%= album.id %>">
+      <%= album.name %>
+    <% end %>
+    
+  </select>
+</p>
+
+<p>
+<label>Ord
+  <input type="number" name="track[ord]" value="<%= track.ord %>">
+</label>
+</p>
+
+<p>
+  <label for="track-bonus">Bonus</label>
+  <input 
+    type="radio" 
+    name="track[bonus]" 
+    id="track-bonus"
+  <%= "checked" if track.bonus %>>
+
+  <label for="track-regular">Regular</label>
+  <input 
+    type="radio" 
+    name="track[bonus]" 
+    id="track-regular"
+  <%= "checked" if !track.bonus %>>
+</p>
+
+<p>
+  <label for="track-lyrics">Lyrics</label>
+  <br>
+  <textarea id ="track-lyrics" 
+    rows="10" cols="40" 
+    name="track[lyrics]"><%= track.lyrics %></textarea>
+</p>
+
+  <button>Submit</button>
+</form>

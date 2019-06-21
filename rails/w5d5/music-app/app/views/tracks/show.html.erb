@@ -1,0 +1,17 @@
+<%= @track.name %>
+<br>
+<a href="<%= album_url(@track.album) %>">Back to <%= @track.album.name%></a>
+
+<%= render "notes/form", track: @track %>
+
+<ul>
+<li><a class='button' href="<%= edit_track_url(@track) %>">Edit Track</a></li>
+  <li>
+    <form action="<%= track_url(@track) %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="delete">
+      <button>Destroy Track</button>
+    </form>
+  </li>
+  <li><a href="<%= album_url(@track.album) %>"><%= @track.album.name %></a></li>
+</ul>
