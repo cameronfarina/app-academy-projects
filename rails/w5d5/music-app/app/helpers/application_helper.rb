@@ -15,4 +15,5 @@ module ApplicationHelper
     end
 
     "<pre class='lyrics'>#{formatted}</pre>".html_safe
+  end
 end
