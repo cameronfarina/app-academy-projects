@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music App</title>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  <header>
+    <h1 class="header">Music App</h1>
+  </header>
+
+    <% if logged_in? %>
+    <nav>
+      <div class="user-details">
+        <p> Logged in as: <%= current_user.email %>
+        <form action="<%= session_url %>" method="post">
+        <%= auth_token %>
+        <input type="hidden" name="_method" value="delete">
+        <button>Sign Out</button>
+        </form>
+      </div>
+    </nav>
+    <% end %>
+
+    <% if flash[:notice]%>
+      <p><%= flash[:notice]%></p>
+    <% end %>
+
+    <% if flash[:errors]%>
+      <p><%= flash[:errors]%></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
