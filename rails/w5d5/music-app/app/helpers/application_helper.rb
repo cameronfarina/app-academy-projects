@@ -8,4 +8,11 @@ module ApplicationHelper
     HTML
   end
 
+  def ugly_lyrics(lyrics)
+    formatted = ""
+    lyrics.lines.each do |line|
+      formatted << "&#9835; #{h(line)}"
+    end
+
+    "<pre class='lyrics'>#{formatted}</pre>".html_safe
 end

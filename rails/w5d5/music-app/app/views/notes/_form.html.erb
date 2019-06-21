@@ -1,4 +1,6 @@
-<form action="<%= notes_url %>">
+<h2>New Note</h2>
+
+<form action="<%= notes_url %>" method="post">
   <%= auth_token %>
 
   <input type="hidden" name="note[track_id]" value="<%= track.id %>">
