@@ -518,3 +518,89 @@ Migrating to SpawnTables (20190624194527)
   [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser"], ["session_token", "aSA8cdNekt0bfIO8lf8-wQ"], ["password_digest", "$2a$12$muIxT9nvl9ZofRnu/1jJouboo1QTKYhiIgR0x6ooSzNtIspFxhmJi"], ["created_at", "2019-06-24 20:51:45.245667"], ["updated_at", "2019-06-24 20:51:45.245667"]]
   [1m[35m (25.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (25.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "sQPjkvTpo6yqRLwECeYcGg"], ["password_digest", "$2a$12$Fn9GbI0WJCI1M594p49KEe4cD2CSUZvensYAdinu85kX2HYE.3zzK"], ["created_at", "2019-06-24 21:34:26.400834"], ["updated_at", "2019-06-24 21:34:26.400834"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (26.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "y2asw-KQ7QRakCC3LaF7pA"], ["password_digest", "$2a$12$EmXw/x1hlaRguZXiLCfn..dn0ck6ChEVv5.5W1eK7XSBncMydWrlm"], ["created_at", "2019-06-24 21:34:26.800734"], ["updated_at", "2019-06-24 21:34:26.800734"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "p73KF82t9b-eeihyWbJfbw"], ["password_digest", "$2a$12$GuhPQ08ndy5pC4jWyjCpWOTeDnOpahcN.DHu9frpXUujgK/REPXyO"], ["created_at", "2019-06-24 21:34:27.151674"], ["updated_at", "2019-06-24 21:34:27.151674"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "XyEqTBMxibSV_NXYNK0sXA"], ["password_digest", "$2a$12$V1gQqY1NknTUX13u/eBu8ODA9DHr5/WA1zYMrvaEzNeHL3ZyznhoW"], ["created_at", "2019-06-24 21:34:27.450979"], ["updated_at", "2019-06-24 21:34:27.450979"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "RAtyqQCwu--q8-209GfABw"], ["password_digest", "$2a$12$RQw8tKItP9zzbDDOy5hZr./Xn/bUWsYqZRMTgPRsDseDIrJRX13wa"], ["created_at", "2019-06-24 21:34:27.751346"], ["updated_at", "2019-06-24 21:34:27.751346"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "el1TgrME04yWtnVij5jAmQ"], ["password_digest", "$2a$12$IQ/P0RX.EDxL/JyvJDQn/O8jsZTX00/bIIqgrMNLUimIixfS18zna"], ["created_at", "2019-06-24 21:34:28.051900"], ["updated_at", "2019-06-24 21:34:28.051900"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "x9dNAyk_gjecVzJXKCs7pQ"], ["password_digest", "$2a$12$tXpp2uH6P7p0OU68p9DAbeVqd0NLjIlxmrQtGwuh6EvKfa5QdUgRW"], ["created_at", "2019-06-24 21:34:28.351231"], ["updated_at", "2019-06-24 21:34:28.351231"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (19.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "MMM7E_pB94GPXUQY0-uVGQ"], ["password_digest", "$2a$12$7w8SEBldrFQTVYtYXQ92B.9kTYF6bKxniP2ybmmyeMQvWQXCQS6jq"], ["created_at", "2019-06-24 21:34:50.765342"], ["updated_at", "2019-06-24 21:34:50.765342"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "u4UPqukxYviCJ9WKfKOMtA"], ["password_digest", "$2a$12$F0nLQHcgd7sJSLWr30LdeuYmymvRb92wcY13wUnsTj1AIaaA.N4yG"], ["created_at", "2019-06-24 21:34:51.152125"], ["updated_at", "2019-06-24 21:34:51.152125"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (15.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "_Ty_EJjGPPTU55WhTFYbVA"], ["password_digest", "$2a$12$fJjvUSYVoJCathhcCgRBG.urvuEBXFsMvnSwsAMUlahhIJR5IHd2a"], ["created_at", "2019-06-24 21:34:51.552431"], ["updated_at", "2019-06-24 21:34:51.552431"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "HcSJFREsWIMcxDIpwkDyPw"], ["password_digest", "$2a$12$bjv4yS8TX0QgsURtvSpIluzr2Nk6OWEB19zOuUobdgqPMkxH/Ps4i"], ["created_at", "2019-06-24 21:34:51.857137"], ["updated_at", "2019-06-24 21:34:51.857137"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "nzrCYV5lQCEwYbptA6vD3A"], ["password_digest", "$2a$12$PVzsCVVpJEs2x2LRKC8hY.CLFI3L2gvdneZaerftEAWZMs0cFdB/i"], ["created_at", "2019-06-24 21:34:52.156887"], ["updated_at", "2019-06-24 21:34:52.156887"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "F6_aHYGb4xEiOXju4fouHA"], ["password_digest", "$2a$12$mUAEE7iX/hkn.VMBGys5POznzllLzMHFLQFrFf3B/.tSIATL923Pu"], ["created_at", "2019-06-24 21:34:52.458816"], ["updated_at", "2019-06-24 21:34:52.458816"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "camkesh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "camkesh"], ["session_token", "o86xLPkw2jTsKo5suKaRBw"], ["password_digest", "$2a$12$A5E48oCeIB57wWtlvLIAPeqmDTjuKfJC4S0zkJWQjRtNFV7uUNRI."], ["created_at", "2019-06-24 21:34:52.754520"], ["updated_at", "2019-06-24 21:34:52.754520"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
