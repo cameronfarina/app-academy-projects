@@ -14,7 +14,7 @@ RSpec.describe SessionsController, type: :controller do
 
     context 'with invalid credentials' do
       it "returns to sign in with non-existent user" do
-        post :create, params: { user: { username: 'camkesh', password: '123456'} }
+        post :create, params: { user: { username: 'notcamkesh', password: '123456'} }
         expect(response).to render_template(:new)
         expect(flash[:errors]).to be_present
       end
@@ -29,7 +29,8 @@ RSpec.describe SessionsController, type: :controller do
 
     context 'with valid credentials' do
       it "redirects to goal index page" do
-        expect(repsonse).to redirect_to(goals_url)
+        post :create, params: { user: { username: 'camkesh', password: '123456'} }
+        expect(response).to redirect_to(goals_url)
       end
 
       it 'logs the user in' do 
@@ -42,7 +43,6 @@ RSpec.describe SessionsController, type: :controller do
     describe 'DELETE #destroy' do
       before(:each) do 
         post :create, params: { user: { username: 'camkesh', password: '123456'} }
-        @session_token = User.find_by(username: 'camkesh').session_token
       end
 
       it 'logs out of the current user' do

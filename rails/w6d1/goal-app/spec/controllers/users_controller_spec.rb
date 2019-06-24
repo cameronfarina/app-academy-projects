@@ -11,7 +11,8 @@ RSpec.describe UsersController, type: :controller do
   describe 'POST #create' do
     context 'with valid params' do
         it "redirects to goal index page" do
-            expect(repsonse).to redirect_to(goals_url)
+            post :create, params: { user: { username: 'himbleflobbits', password: 'password'} }
+            expect(response).to redirect_to(goals_url)
         end
 
         it 'logs the user in' do 
