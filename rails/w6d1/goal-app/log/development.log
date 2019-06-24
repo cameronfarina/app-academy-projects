@@ -105,3 +105,100 @@ Migrating to SpawnTables (20190624194527)
   ↳ bin/rails:9
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ bin/rails:9
+Started GET "/session/new" for ::1 at 2019-06-24 19:06:12 -0400
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/larissa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 561ms (Views: 500.3ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-24 19:06:19 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 183ms (Views: 84.8ms | ActiveRecord: 83.8ms)
+
+
+Started GET "/goals?authenticity_token=m4ACZx5Eg7c1zLjyhhJSHKeHYCpSlj9NOUcMMP156xm%2BlmzpFfbcGGgEh5r6pptX82qZs6mvV97T1j3poyuOkw%3D%3D&user%5Busername%5D=cameron&user%5Bpassword%5D=[FILTERED]" for ::1 at 2019-06-24 19:06:36 -0400
+Processing by GoalsController#index as HTML
+  Parameters: {"authenticity_token"=>"m4ACZx5Eg7c1zLjyhhJSHKeHYCpSlj9NOUcMMP156xm+lmzpFfbcGGgEh5r6pptX82qZs6mvV97T1j3poyuOkw==", "user"=>{"username"=>"cameron", "password"=>"[FILTERED]"}}
+  Rendering goals/index.html.erb within layouts/application
+  Rendered goals/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (42.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 136ms (Views: 74.8ms | ActiveRecord: 42.1ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-24 19:07:36 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/larissa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 541ms (Views: 436.0ms | ActiveRecord: 38.4ms)
+
+
+Started GET "/goals?authenticity_token=rq5OoVRLYfdFGJ5jQPnxG5vm8tvJzCrv2pctikdaaxqLuCAvX%2Fk%2BWBjQoQs8TThQzwsLQjL1QnwwBhxTGQgOkA%3D%3D&user%5Busername%5D=cameron&user%5Bpassword%5D=[FILTERED]" for ::1 at 2019-06-24 19:07:41 -0400
+Processing by GoalsController#index as HTML
+  Parameters: {"authenticity_token"=>"rq5OoVRLYfdFGJ5jQPnxG5vm8tvJzCrv2pctikdaaxqLuCAvX/k+WBjQoQs8TThQzwsLQjL1QnwwBhxTGQgOkA==", "user"=>{"username"=>"cameron", "password"=>"[FILTERED]"}}
+  Rendering goals/index.html.erb within layouts/application
+  Rendered goals/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (33.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 153ms (Views: 101.5ms | ActiveRecord: 33.9ms)
+
+
+Started GET "/goals?authenticity_token=rq5OoVRLYfdFGJ5jQPnxG5vm8tvJzCrv2pctikdaaxqLuCAvX%2Fk%2BWBjQoQs8TThQzwsLQjL1QnwwBhxTGQgOkA%3D%3D&user%5Busername%5D=feafjsefi&user%5Bpassword%5D=[FILTERED]" for ::1 at 2019-06-24 19:07:50 -0400
+Processing by GoalsController#index as HTML
+  Parameters: {"authenticity_token"=>"rq5OoVRLYfdFGJ5jQPnxG5vm8tvJzCrv2pctikdaaxqLuCAvX/k+WBjQoQs8TThQzwsLQjL1QnwwBhxTGQgOkA==", "user"=>{"username"=>"feafjsefi", "password"=>"[FILTERED]"}}
+  Rendering goals/index.html.erb within layouts/application
+  Rendered goals/index.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 120ms (Views: 118.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/goals?authenticity_token=rq5OoVRLYfdFGJ5jQPnxG5vm8tvJzCrv2pctikdaaxqLuCAvX%2Fk%2BWBjQoQs8TThQzwsLQjL1QnwwBhxTGQgOkA%3D%3D&user%5Busername%5D=feafjsefi&user%5Bpassword%5D=[FILTERED]" for ::1 at 2019-06-24 19:08:51 -0400
+Processing by GoalsController#index as HTML
+  Parameters: {"authenticity_token"=>"rq5OoVRLYfdFGJ5jQPnxG5vm8tvJzCrv2pctikdaaxqLuCAvX/k+WBjQoQs8TThQzwsLQjL1QnwwBhxTGQgOkA==", "user"=>{"username"=>"feafjsefi", "password"=>"[FILTERED]"}}
+  Rendering goals/index.html.erb within layouts/application
+  Rendered goals/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 191ms (Views: 167.1ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/" for ::1 at 2019-06-24 19:09:40 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/larissa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/larissa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (5.3ms)
+Completed 200 OK in 37ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-24 19:09:46 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (26.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 318ms (Views: 153.5ms | ActiveRecord: 67.1ms)
+
+
+Started GET "/goals?authenticity_token=H8Y1UAlY39zsNdyQs7IWUHRXtSzDhiHqmXFm4QiyJ7M60FveAuqAc7H94%2FjPBt8bILpMtTi%2FSXlz4Fc4VuBCOQ%3D%3D&user%5Busername%5D=cam&user%5Bpassword%5D=[FILTERED]" for ::1 at 2019-06-24 19:09:55 -0400
+Processing by GoalsController#index as HTML
+  Parameters: {"authenticity_token"=>"H8Y1UAlY39zsNdyQs7IWUHRXtSzDhiHqmXFm4QiyJ7M60FveAuqAc7H94/jPBt8bILpMtTi/SXlz4Fc4VuBCOQ==", "user"=>{"username"=>"cam", "password"=>"[FILTERED]"}}
+  Rendering goals/index.html.erb within layouts/application
+  Rendered goals/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (18.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 190ms (Views: 160.4ms | ActiveRecord: 18.7ms)
+
+

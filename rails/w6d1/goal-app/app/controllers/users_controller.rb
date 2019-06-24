@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in(@user)
+      puts 'YOURE NOT CRAZY'
       redirect_to goals_url
     else
       flash.now[:errors] = @user.errors.full_messages
