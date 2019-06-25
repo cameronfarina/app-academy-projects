@@ -17,6 +17,11 @@
 	border-top-right-radius: 3px;
 }
 
+.language-nav li:first-child {
+	font-weight: bold;
+}
+
+
 .language-nav a {
 	margin: 0 5px;
 	text-transform: uppercase;
@@ -44,7 +49,14 @@
 
 .masthead-links li {
 	margin-left: 10px;
+}
+
+.masthead-links li {
 	border-right: 1px solid $light-gray;
+}
+
+li:last-child { 
+  border-right: none;
 }
 
 .masthead-links button {
@@ -63,6 +75,10 @@
 .masthead-links button, 
 .masthead-links time {
 	margin-right: 10px;
+}
+
+.masthead-links a {
+	text-decoration: underline;
 }
 
 .masthead-links i {

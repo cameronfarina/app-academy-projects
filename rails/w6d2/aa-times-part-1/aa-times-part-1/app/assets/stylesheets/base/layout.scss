@@ -6,26 +6,29 @@ html {
 }
 
 body {
-	// ...
+	width: 80%;
+	margin: 0 auto;
+	font-family: $serif;
+	font-size: 12px;
 }
 
-button {
-	// background-color:
-	// border-color:
-	// color:
-	// font-weight:
-	// padding:
-	// border-radius:
-	// transition:
-	// font-family:
-	// text-transform:
-	// font-size:
-	// text-align:
+.right-nav-button {
+	background-color: #6288a5;
+	border-color: #6288a5;
+	color: white;
+	font-weight: bold;
+	padding: 6px;
+	border-radius: 3px;
+	transition: background-color .5s;
+	font-family: arial;
+	text-transform: uppercase;
+	font-size: 10px;
+	text-align: center;
 }
 
 button:hover {
-	// background-color:
-	// border-color:
+	background-color: #265e8b;
+	border-color: #265e8b;
 }
 
 /*
@@ -46,4 +49,8 @@ hr {
 .hr-top {
 	height: 2px;
 	margin-bottom: 1px;
+}
+
+.hidden {
+	display: none;
 }
