@@ -1,0 +1,40 @@
+<h1><%= @sub.title %></h1>
+
+
+<ul>
+  <% @sub.posts.each do |post| %>
+    <li><a href="<%= post_url(post) %>"><%= post.title %></a></li>
+  <% end %>
+</ul>
+
+
+<h2>Make a New Post</h2>
+
+<form action="<%= posts_url %>" method="POST">
+  <%= auth_token %>
+
+  <label>
+    Title:
+    <input type="text" name="post[title]">
+  </label>
+  <br>
+
+  <label>
+    URL:
+    <input type="text" name="post[url]">
+  </label>
+  <br>
+
+  <label>
+    Content:
+    <textarea name="post[content]"></textarea>
+  </label>
+  <br>
+
+  <button>Create Post</button>
+  </form>
+
+  <br>
+  <br>
+
+  <a href="<%= edit_sub_url(@sub) if @sub.moderator_id == current_user.id %>">Edit</a>

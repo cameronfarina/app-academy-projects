@@ -1,0 +1,7 @@
+<a href="<%= edit_user_url(@user) %>">Edit User</a>
+<ul>
+<% @user.subs.each do |sub| %>
+  <li><a href="<%= subs_url(sub)  %>"><%= sub.title %></a></li>
+<% end %>
+
+</ul>
