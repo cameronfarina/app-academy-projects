@@ -1,0 +1,66 @@
+ul hr {
+  width: 50%;
+}
+
+.col-33 ul li {
+  list-style: initial;
+  padding: 5px;
+  line-height: 1.5em;
+  list-style-position: inside;
+}
+
+.col-50 ul li {
+  list-style: initial;
+  padding: 5px;
+  line-height: 1.5em;
+  font-weight: bold;
+  list-style-position: inside;
+}
+
+.page-header {
+  font-family: $serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+}
+
+.page-header:hover {
+  text-decoration: underline;
+}
+
+.authors {
+  color: $gray;
+}
+
+.comments {
+  color: $light-blue;
+  text-decoration: underline;
+  padding-top: 5px;
+}
+
+iframe {
+	margin-bottom: 10px;
+}
+
+.opinion-sign-up input{
+  display: flex;
+  padding: 0 10px;
+ 	border: 1px solid $gray;
+  width: 100%;
+}
+
+.opinion-sign-up button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: $light-blue;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+
+.newspaper {
+  font-size: 14px;
+	text-align: center;
+	color: black;
+}

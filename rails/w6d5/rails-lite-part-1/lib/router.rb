@@ -16,7 +16,6 @@ class Route
   # use pattern to pull out route params (save for later?)
   # instantiate controller and call controller action
   def run(req, res)
-    regexp = 
     match_data = @pattern.match(req.path)
     route_params = Hash[ match_data.names.zip( match_data.captures ) ]
 

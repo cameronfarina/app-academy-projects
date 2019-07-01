@@ -4,6 +4,8 @@ require 'erb'
 require_relative './session'
 
 class ControllerBase
+
+
   attr_reader :req, :res, :params
 
   # Setup the controller
@@ -12,6 +14,7 @@ class ControllerBase
     @res = res
     @params = route_params.merge(req.params)
     @already_built_response = false
+    @protect_from_forgery = false
   end
 
   # Helper method to alias @already_built_response
@@ -60,7 +63,31 @@ class ControllerBase
 
   # use this with the router to call action_name (:index, :show, :create...)
   def invoke_action(name)
+    if @protect_from_forgery || @req.request_method != "GET"
+      self.check_authenticity_token
+    else
+      self.form_authenticity_token
+    end
+
     self.send(name)
     render(name) unless @already_built_response
+  end
+
+  def form_authenticity_token
+    @token ||= SecureRandom.urlsafe_base64(16)
+    @res.set_cookie("authenticity_token", value: @token, path: '/')
+    @token
+  end
+
+  def check_authenticity_token
+    req_auth_token = @req.cookies['authenticity_token']
+    unless req_auth_token && (req_auth_token == params['authenticity_token'])
+      raise 'Invalid authenticity token'
+    end
+  end
+
+  private
+   def self.protect_from_forgery
+    @protect_from_forgery = true
   end
 end
