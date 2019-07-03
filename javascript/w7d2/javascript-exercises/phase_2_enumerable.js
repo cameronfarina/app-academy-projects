@@ -13,24 +13,21 @@ Array.prototype.myEach = function (cb) {
 array.myEach(myEach);
 
 
-// function myMapCallBack(el) {
-//         return (el * 2);
-//     };
+function myMapCallBack(el) {
+        return (el * 2);
+    };
 
-// Array.prototype.myMap = function(cb) {
-//     newArray = [];
-//     this.myEach(function(el) {
-//       newArray.push(cb(el));
-//     }) 
+Array.prototype.myMap = function(cb) {
+    newArray = [];
+    this.myEach(function(el) {
+      newArray.push(cb(el));
+    }) 
 
-//     return newArray;
-// }
+    return newArray;
+}
 
-// array.myMap(myMapCallBack);
+array.myMap(myMapCallBack);
 
-
-
-const array = [1, 2, 3]
 
 function myReduceCallBack(acc, el) {
   return (acc + el);
@@ -52,4 +49,5 @@ Array.prototype.myReduce = function (cb, initialValue) {
 
 }
 array.myReduce(myReduceCallBack, 25);
+
 
