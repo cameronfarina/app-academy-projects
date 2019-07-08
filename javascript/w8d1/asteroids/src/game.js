@@ -50,9 +50,7 @@ Game.prototype.wrap = function (pos) {
   } else if (pos[1] > Game.DIM_Y) {
     pos[1] = 0;
     wrappedPosition.push(pos[1]);
-  } else if (pos[1] < 0) {
-    pos[1] = Game.DIM_Y;
-    wrappedPosition.push(pos[1]);
+  } 
   }
 
   return wrappedPosition;

@@ -23,7 +23,12 @@ MovingObject.prototype.draw = function (ctx) {
 };
 
 MovingObject.prototype.move = function () {
-    
+    const new_x = this.pos[0] += this.vel[0];
+    const new_y = this.pos[1] += this.vel[1];
+  if ((new_x > 500) || (new_x < 0)) {
+    this.game.wrap(this.pos);
+  } else if ((new_y > 500) || (new_y < 0)){
+    this.game.wrap(this.pos);
   } 
 };
 // this is math, not JavaScript
