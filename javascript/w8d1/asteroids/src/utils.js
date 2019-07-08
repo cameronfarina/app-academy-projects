@@ -1,5 +1,5 @@
 const Util = {
-    inherits: function inherits(childClass, parentClass) {
+    inherits(childClass, parentClass) {
         function Surrogate () {}
         Surrogate.prototype = parentClass.prototype;
         childClass.prototype = new Surrogate();

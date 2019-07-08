@@ -1,18 +1,24 @@
-const MovingObject = require("./moving_object.js");
+// const MovingObject = require("./moving_object.js");
+// const Asteroid = require("./asteroid.js");
+const Game = require("./game.js");
+const GameView = require("./game_view.js");
 
-window.MovingObject = MovingObject;
+
+  // window.Asteroid = Asteroid;
+  window.Game = Game;
+  window.GameView = GameView;
+  // window.MovingObject = MovingObject;
 
 
 window.addEventListener('DOMContentLoaded', function() {
-  newMovingObject = new MovingObject({ 
-    pos: [30, 30],
-    vel: [10, 10],
-    radius: 5,
-    color: "#00FF00"
-  });
-  const canvas = document.getElementById('game-canvas');
+  width = Game.DIM_X;
+  height = Game.DIM_Y;
+  const newGame = new Game();
+  canvas = document.getElementById('game-canvas');
   ctx = canvas.getContext("2d");
-  newMovingObject.draw(ctx);
+  console.log(Game);
+  newGameView = new GameView(newGame, ctx);
+  newGameView.start();
 });
 
 
