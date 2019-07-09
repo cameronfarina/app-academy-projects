@@ -22,9 +22,20 @@
   background: gray;
   box-sizing: border-box;
   border: 5px solid black;
+  color: white;
+  font-size: 60px;
+  text-align: center;
 }
 
 .tic-tac-toe-grid:hover {
   background: yellow;
   cursor: pointer;
+}
+
+.x {
+  background: red;
+}
+
+.o {
+  background: blue;
 }
