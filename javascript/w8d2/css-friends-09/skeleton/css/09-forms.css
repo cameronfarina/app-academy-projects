@@ -1,0 +1,100 @@
+/* PHASE 9: Forms */
+.form {
+  margin: 0 0 20px 0;
+}
+
+.input {
+  margin: 0 0 20px 0;
+}
+
+.form-thumb {
+  float: left;
+}
+
+.thumb {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.thumb > img {
+  border-radius: 5px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.form-fieldset {
+  float: left;
+  margin: 0 0 0 20px;
+  padding: 19px;
+  width: 500px;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input > label {
+  display: block;
+  padding: 0 0 5px 0;
+}
+
+.input > input, .input > textarea {
+  display: block;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 90%;
+  border-radius: 5px;
+}
+
+
+
+input[type="password"], 
+input[type="email"], 
+input[type="text"], 
+input[type="submit"], 
+textarea, button {
+    -webkit-appearance: none;
+}
+
+.input > textarea {
+  height: 150px;
+}
+
+.submit {
+    margin: 20px 0 0 0;
+    padding: 0 0 3px 0;
+}
+
+.submit > button {
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+    background: #0c0;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 3px 0 0 #070;
+}
+
+.button-alternative {
+    padding: 0 0 0 5px;
+}
+
+.button-alternative strong {
+    padding: 0 0 0 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.group:after {
+    content: "";
+    display: block;
+    clear: both;
+}
