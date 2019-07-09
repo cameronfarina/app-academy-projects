@@ -1,0 +1,26 @@
+.tic-tac-toe-title {
+  margin: 50px;
+  text-align: center;
+  font-size: 50px;
+}
+.tic-tac-toe-board {
+  margin: auto;
+  display: flex;
+  width: 500px;
+  height: 500px;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  list-style: none;
+  padding: 3px;
+}
+
+.tic-tac-toe-grid {
+  width: calc(460px / 3);
+  height: calc(460px / 3);
+  background: gray;
+  border: 5px solid black;
+}
+
+.tic-tac-toe-grid:hover {
+  background: yellow;
+}
