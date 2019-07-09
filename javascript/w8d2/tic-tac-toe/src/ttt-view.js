@@ -9,7 +9,6 @@ class View {
   bindEvents() { 
     this.$el.on("click", "li", ( e => {
       const $grid = $(e.this);
-      
       this.game.playMove();
     }));
   }
