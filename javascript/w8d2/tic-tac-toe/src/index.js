@@ -1,5 +1,5 @@
-const View = require('./ttt-view')// require appropriate file
-const Game = require('../../node-solution/game')// require appropriate file
+const View = require('./ttt-view');// require appropriate file
+const Game = require('../../node-solution/game');// require appropriate file
 
   $(() => {
     // Your code here
@@ -7,3 +7,5 @@ const Game = require('../../node-solution/game')// require appropriate file
     const newGame = new Game();
     new View(newGame, containerEl);
   });
+
+

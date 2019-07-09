@@ -3,24 +3,28 @@
   text-align: center;
   font-size: 50px;
 }
+
 .tic-tac-toe-board {
-  margin: auto;
+  margin: 30px auto;
   display: flex;
   width: 500px;
   height: 500px;
   flex-wrap: wrap;
+  box-sizing: content-box;
   border: 5px solid black;
   list-style: none;
-  padding: 3px;
+  padding: 0;
 }
 
 .tic-tac-toe-grid {
-  width: calc(460px / 3);
-  height: calc(460px / 3);
+  width: 33.33333%;
+  height: 33.33333%;
   background: gray;
+  box-sizing: border-box;
   border: 5px solid black;
 }
 
 .tic-tac-toe-grid:hover {
   background: yellow;
+  cursor: pointer;
 }

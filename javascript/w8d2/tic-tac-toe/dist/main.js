@@ -126,7 +126,7 @@ eval("\nconst MoveError = function (msg) { this.msg = msg; };\n\n// MoveError re
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\")// require appropriate file\nconst Game = __webpack_require__(/*! ../../node-solution/game */ \"../node-solution/game.js\")// require appropriate file\n\n  $(() => {\n    // Your code here\n    const containerEl = $('.ttt');\n    const newGame = new Game();\n    new View(newGame, containerEl);\n  });\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\");// require appropriate file\nconst Game = __webpack_require__(/*! ../../node-solution/game */ \"../node-solution/game.js\");// require appropriate file\n\n  $(() => {\n    // Your code here\n    const containerEl = $('.ttt');\n    const newGame = new Game();\n    new View(newGame, containerEl);\n  });\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -137,7 +137,7 @@ eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\")/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (3:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| class View {\\n|   constructor(game, $el) { }\\n>     this.game = game;\\n|     this.$el = $el;\\n| \");\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\n  constructor(game, $el) { \n    this.game = game;\n    this.$el = $el;\n    this.setupBoard();\n  }\n  \n\n  bindEvents() { \n    this.$el.on(\"click\", \"li\", ( e => {\n      const $grid = $(e.this);\n      \n      this.game.playMove();\n    }));\n  }\n\n  makeMove($square) { }\n\n  setupBoard() { \n    const $ul = $('<ul>');\n    $('body').append($ul);\n\n    $ul.addClass('tic-tac-toe-board');\n    for (let row = 0; row < 3; row++) {\n      for (let col = 0; col < 3; col++) {\n        let $li = $('<li>');\n        $li.addClass('tic-tac-toe-grid');\n        $ul.append($li);\n      }\n    }\n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ })
 
