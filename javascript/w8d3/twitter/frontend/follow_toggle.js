@@ -30,21 +30,28 @@ class FollowToggle {
     e.preventDefault();
 
     if (this.followState === "unfollowed") {
-      this.followState = "followed";
+      this.followState = "following";
       this.render();
-      APIUtil.followUser(this.userId).then();
+      APIUtil.followUser(this.userId).then(() => this.followUserCb());
     } else if (this.followState === "followed") {
-      this.followState = "unfollowed";
+      this.followState = "unfollowing";
       this.render();
-      APIUtil
-        .unfollowUser(this.userId)
-        .then(
-          bleat => renderBleats([bleat])
-        );
+      APIUtil.unfollowUser(this.userId).then(() => this.unfollowUserCb());
     }
   }
-}
 
-xhr.then(successCb, errorCb)
+  unfollowUserCb() {
+    this.followState = "unfollowed";
+    this.render();
+  }
+  followUserCb() {
+    this.followState = "followed";
+    this.render();
+  }
+
+  // errorCb() {
+
+  // }
+}
 
 module.exports = FollowToggle;

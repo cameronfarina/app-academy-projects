@@ -1,6 +1,4 @@
-const FollowToggle = require("./follow_toggle");
-
-module.exports = {
+const APIUtil = {
   followUser(id) {
     return $.ajax({
       dataType: "json",
@@ -15,10 +13,16 @@ module.exports = {
       method: "DELETE",
       url: `/users/${id}/follow`
     });
+  },
+
+  searchUsers(queryVal) {
+    return $.ajax({
+      dataType: "json",
+      method: "GET",
+      url: "/users/search",
+      data: { queryVal }
+    })
   }
 };
 
-// module.exports = {
-//   followUser: followUser,
-//   unfollowUser: unfollowUser
-// };
+module.exports = APIUtil;
