@@ -217,7 +217,7 @@ $(function() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const APIUtil = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+const APIUtil = __webpack_require__(/*! ./api_util.js */ "./frontend/api_util.js");
 
 class UsersSearch {
   constructor(el) {
@@ -238,7 +238,8 @@ class UsersSearch {
 
   renderResults(users) {
     this.$ul = [];
- 
+      console.log(users);  
+      console.log(users);  
     for (let i = 0; i < users.length; i++) {
     //   console.log('were in here');
       let currentUser = users[i];

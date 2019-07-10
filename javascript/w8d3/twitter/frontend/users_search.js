@@ -1,4 +1,4 @@
-const APIUtil = require("./api_util");
+const APIUtil = require("./api_util.js");
 
 class UsersSearch {
   constructor(el) {
@@ -19,7 +19,8 @@ class UsersSearch {
 
   renderResults(users) {
     this.$ul = [];
- 
+      console.log(users);  
+      console.log(users);  
     for (let i = 0; i < users.length; i++) {
     //   console.log('were in here');
       let currentUser = users[i];
