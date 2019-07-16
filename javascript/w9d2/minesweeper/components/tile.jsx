@@ -20,9 +20,9 @@ export default class Tile extends React.Component {
   render() {
     // \u1f4a3 bomb
     // \u1f6a9 flag
-    let tile = this.props.tile;
+    let tile = this;
     let tileClass;
-    debugger
+    // debugger
     if (tile.explored) {
       if (tile.bombed) {
         tileClass = "bomb";
@@ -36,10 +36,9 @@ export default class Tile extends React.Component {
       tileClass = "tileNotExplored";
     }
 
-    
     return (
       <div className={tileClass} onClick={this.handleClick}>
-        
+        some tile
       </div>
     );
   }

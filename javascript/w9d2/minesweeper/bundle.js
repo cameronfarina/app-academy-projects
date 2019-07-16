@@ -139,6 +139,7 @@ function (_React$Component) {
     value: function render() {
       var board = this.props.board;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, board.grid.map(function (row, idx) {
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, row.map(function (tile, j) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null);
         }));
@@ -312,9 +313,8 @@ function (_React$Component) {
     value: function render() {
       // \u1f4a3 bomb
       // \u1f6a9 flag
-      var tile = this.props.tile;
-      var tileClass;
-      debugger;
+      var tile = this;
+      var tileClass; // debugger
 
       if (tile.explored) {
         if (tile.bombed) {
@@ -332,7 +332,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: tileClass,
         onClick: this.handleClick
-      });
+      }, "some tile");
     }
   }]);
 
