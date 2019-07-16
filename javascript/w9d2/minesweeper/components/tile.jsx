@@ -27,18 +27,18 @@ export default class Tile extends React.Component {
     // debugger
     if (tile.explored) {
       if (tile.bombed) {
-        tileClass = "bomb";
-        text = "\u1f4a3";
+        tileClass = "bomb tile";
+        text = "💣";
       } else {
-        tileClass = "exploredTile";
+        tileClass = "exploredTile tile";
         counter = tile.adjacentBombCount();
         text = counter > 0 ? `${counter}` : "  ";
       }
     } else if (tile.flagged) {
-      tileClass = "flaggedTile";
-      text = "\u1f6a9";
+      tileClass = "flaggedTile tile";
+      text = "⚑";
     } else {
-      tileClass = "tileNotExplored";
+      tileClass = "tileNotExplored tile";
       text = "  ";
     }
 
@@ -48,4 +48,4 @@ export default class Tile extends React.Component {
       </div>
     );
   }
-}
+} 

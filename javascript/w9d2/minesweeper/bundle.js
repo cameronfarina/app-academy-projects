@@ -137,7 +137,7 @@ function (_React$Component) {
       var _this = this;
 
       var board = this.props.board;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid"
       }, board.grid.map(function (row, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -223,14 +223,29 @@ function (_React$Component) {
       board: new _minesweeper__WEBPACK_IMPORTED_MODULE_2__["Board"](9, 10)
     };
     _this.updateGame = _this.updateGame.bind(_assertThisInitialized(_this));
+    _this.restartGame = _this.restartGame.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Game, [{
     key: "render",
     value: function render() {
-      // let board = this.state.board.gridSize;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_board__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      var modal;
+
+      if (this.state.board.lost() || this.state.board.won()) {
+        var content = this.state.board.lost() ? "You Lose!" : "You Win!";
+        modal = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "screen"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "modal"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, content), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.restartGame
+        }, "Play Again")));
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "gameBoard"
+      }, modal, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_board__WEBPACK_IMPORTED_MODULE_1__["default"], {
         board: this.state.board,
         updateGame: this.updateGame
       }));
@@ -246,6 +261,13 @@ function (_React$Component) {
 
       this.setState({
         board: this.state.board
+      });
+    }
+  }, {
+    key: "restartGame",
+    value: function restartGame() {
+      this.setState({
+        board: new _minesweeper__WEBPACK_IMPORTED_MODULE_2__["Board"](9, 10)
       });
     }
   }]);
@@ -329,18 +351,18 @@ function (_React$Component) {
 
       if (tile.explored) {
         if (tile.bombed) {
-          tileClass = "bomb";
-          text = "\u1F4A3";
+          tileClass = "bomb tile";
+          text = "💣";
         } else {
-          tileClass = "exploredTile";
+          tileClass = "exploredTile tile";
           counter = tile.adjacentBombCount();
           text = counter > 0 ? "".concat(counter) : "  ";
         }
       } else if (tile.flagged) {
-        tileClass = "flaggedTile";
-        text = "\u1F6A9";
+        tileClass = "flaggedTile tile";
+        text = "⚑";
       } else {
-        tileClass = "tileNotExplored";
+        tileClass = "tileNotExplored tile";
         text = "  ";
       }
 

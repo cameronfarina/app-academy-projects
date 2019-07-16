@@ -10,15 +10,27 @@ export default class Game extends React.Component {
       board: new Minesweeper.Board(9, 10)
     };
 
-    
     this.updateGame = this.updateGame.bind(this);
+    this.restartGame = this.restartGame.bind(this);
   }
 
   render() {
-    // let board = this.state.board.gridSize;
+    let modal;
+    if (this.state.board.lost() || this.state.board.won()) {
+      let content = this.state.board.lost() ? "You Lose!" : "You Win!";
+      modal = (
+        <div className="screen">
+          <div className="modal">
+            <h2>{content}</h2>
+            <button onClick={this.restartGame}>Play Again</button>
+          </div>
+        </div>
+      );
+    }
 
     return (
-      <div>
+      <div className="gameBoard">
+        {modal}
         <Board board={this.state.board} updateGame={this.updateGame} />
       </div>
     );
@@ -31,6 +43,10 @@ export default class Game extends React.Component {
       tile.explore();
     }
 
-    this.setState({ board: this.state.board })
+    this.setState({ board: this.state.board });
+  }
+
+  restartGame() {
+    this.setState({ board: new Minesweeper.Board(9, 10)});
   }
 }

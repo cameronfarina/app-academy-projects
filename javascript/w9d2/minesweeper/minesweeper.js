@@ -1,10 +1,10 @@
 export class Tile {
   constructor(board, pos) {
-      this.board = board;
-      this.pos = pos;
-      this.bombed = false;
-      this.explored = false;
-      this.flagged = false;
+    this.board = board;
+    this.pos = pos;
+    this.bombed = false;
+    this.explored = false;
+    this.flagged = false;
   }
 
   adjacentBombCount() {
@@ -28,7 +28,6 @@ export class Tile {
         tile.explore();
       });
     }
-
   }
 
   neighbors() {
@@ -57,8 +56,16 @@ export class Tile {
   }
 }
 
-Tile.DELTAS = [[-1, -1], [-1,  0], [-1,  1], [ 0, -1],
-             [ 0,  1], [ 1, -1], [ 1,  0], [ 1,  1]];
+Tile.DELTAS = [
+  [-1, -1],
+  [-1, 0],
+  [-1, 1],
+  [0, -1],
+  [0, 1],
+  [1, -1],
+  [1, 0],
+  [1, 1]
+];
 
 export class Board {
   constructor(gridSize, numBombs) {
@@ -81,8 +88,10 @@ export class Board {
 
   onBoard(pos) {
     return (
-      pos[0] >= 0 && pos[0] < this.gridSize &&
-        pos[1] >= 0 && pos[1] < this.gridSize
+      pos[0] >= 0 &&
+      pos[0] < this.gridSize &&
+      pos[1] >= 0 &&
+      pos[1] < this.gridSize
     );
   }
 
