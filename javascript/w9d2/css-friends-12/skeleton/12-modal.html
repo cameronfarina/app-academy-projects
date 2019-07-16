@@ -38,6 +38,7 @@
         </li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Settings</a></li>
+        <li><a href="#" class='js-modal-open'>Sign In</a></li>
       </ul>
 
     </nav>
@@ -122,7 +123,7 @@
           </div>
 
           <div class="submit">
-            <button>Post To Wall</button>
+            <button class='js-modal-open'>Post To Wall</button>
             <span class="button-alternative">or <strong>Cancel</strong></span>
           </div>
 
@@ -232,5 +233,49 @@
 
   </footer>
 
+
+  <div class="modal is-open">
+    <section class="modal-screen"></section>
+
+    <form class="modal-form">
+        <span class="js-modal-close">&times;</span>
+
+        <h1>Sign In</h1>
+
+        <div class="input">
+          <label type="password">Password</label>
+          <input type="text">
+
+        </div>
+        <div class="input">
+          <label type="text">Username</label>
+          <input type="text">
+        </div>
+
+        <div class="submit">
+          <button>Sign In</button>
+          <span class="button-alternative">or <strong class="js-modal-close">Cancel</strong></span> 
+        </div>
+    </form>
+  
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    $(function () {
+
+      $("body").on("click", ".js-modal-open", function (event) {
+        event.preventDefault();
+        $(".modal").addClass("is-open");
+      });
+
+      $("body").on("click", ".js-modal-close", function (event) {
+        event.preventDefault();
+        $(".modal").removeClass("is-open");
+      });
+
+    });
+  </script>
 </body>
 </html>
