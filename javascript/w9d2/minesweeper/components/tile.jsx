@@ -8,37 +8,43 @@ export default class Tile extends React.Component {
   }
 
   handleClick(e) {
+    let flagged;
     if (e.altKey) {
-      let flagged = true;
+      flagged = true;
     } else {
-      let flagged = false;
+      flagged = false;
     }
-
     this.props.updateGame(this.props.tile, flagged);
   }
 
   render() {
     // \u1f4a3 bomb
     // \u1f6a9 flag
-    let tile = this;
+    let tile = this.props.tile;
     let tileClass;
+    let counter;
+    let text;
     // debugger
     if (tile.explored) {
       if (tile.bombed) {
         tileClass = "bomb";
+        text = "\u1f4a3";
       } else {
         tileClass = "exploredTile";
-        let counter = tile.adjacentBombCount();
+        counter = tile.adjacentBombCount();
+        text = counter > 0 ? `${counter}` : "  ";
       }
     } else if (tile.flagged) {
       tileClass = "flaggedTile";
+      text = "\u1f6a9";
     } else {
       tileClass = "tileNotExplored";
+      text = "  ";
     }
 
     return (
       <div className={tileClass} onClick={this.handleClick}>
-        some tile
+        {text}
       </div>
     );
   }

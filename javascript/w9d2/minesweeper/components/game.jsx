@@ -10,6 +10,7 @@ export default class Game extends React.Component {
       board: new Minesweeper.Board(9, 10)
     };
 
+    
     this.updateGame = this.updateGame.bind(this);
   }
 

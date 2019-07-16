@@ -99,8 +99,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tile */ "./components/tile.jsx");
-/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! os */ "./node_modules/os-browserify/browser.js");
-/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -122,7 +120,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var Board =
 /*#__PURE__*/
 function (_React$Component) {
@@ -137,11 +134,21 @@ function (_React$Component) {
   _createClass(Board, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       var board = this.props.board;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, board.grid.map(function (row, idx) {
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null);
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, row.map(function (tile, j) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "grid"
+      }, board.grid.map(function (row, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row",
+          key: idx
+        }, row.map(function (tile, j) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: idx * 3 + j,
+            tile: tile,
+            updateGame: _this.props.updateGame
+          });
         }));
       }));
     }
@@ -300,10 +307,12 @@ function (_React$Component) {
   _createClass(Tile, [{
     key: "handleClick",
     value: function handleClick(e) {
+      var flagged;
+
       if (e.altKey) {
-        var _flagged = true;
+        flagged = true;
       } else {
-        var _flagged2 = false;
+        flagged = false;
       }
 
       this.props.updateGame(this.props.tile, flagged);
@@ -313,26 +322,32 @@ function (_React$Component) {
     value: function render() {
       // \u1f4a3 bomb
       // \u1f6a9 flag
-      var tile = this;
-      var tileClass; // debugger
+      var tile = this.props.tile;
+      var tileClass;
+      var counter;
+      var text; // debugger
 
       if (tile.explored) {
         if (tile.bombed) {
           tileClass = "bomb";
+          text = "\u1F4A3";
         } else {
           tileClass = "exploredTile";
-          var counter = tile.adjacentBombCount();
+          counter = tile.adjacentBombCount();
+          text = counter > 0 ? "".concat(counter) : "  ";
         }
       } else if (tile.flagged) {
         tileClass = "flaggedTile";
+        text = "\u1F6A9";
       } else {
         tileClass = "tileNotExplored";
+        text = "  ";
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: tileClass,
         onClick: this.handleClick
-      }, "some tile");
+      }, text);
     }
   }]);
 
@@ -635,66 +650,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	}
 
 	return to;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/os-browserify/browser.js":
-/*!***********************************************!*\
-  !*** ./node_modules/os-browserify/browser.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-exports.endianness = function () { return 'LE' };
-
-exports.hostname = function () {
-    if (typeof location !== 'undefined') {
-        return location.hostname
-    }
-    else return '';
-};
-
-exports.loadavg = function () { return [] };
-
-exports.uptime = function () { return 0 };
-
-exports.freemem = function () {
-    return Number.MAX_VALUE;
-};
-
-exports.totalmem = function () {
-    return Number.MAX_VALUE;
-};
-
-exports.cpus = function () { return [] };
-
-exports.type = function () { return 'Browser' };
-
-exports.release = function () {
-    if (typeof navigator !== 'undefined') {
-        return navigator.appVersion;
-    }
-    return '';
-};
-
-exports.networkInterfaces
-= exports.getNetworkInterfaces
-= function () { return {} };
-
-exports.arch = function () { return 'javascript' };
-
-exports.platform = function () { return 'browser' };
-
-exports.tmpdir = exports.tmpDir = function () {
-    return '/tmp';
-};
-
-exports.EOL = '\n';
-
-exports.homedir = function () {
-	return '/'
 };
 
 

@@ -1,6 +1,5 @@
 import React from "react";
 import Tile from "./tile";
-import { cpus } from "os";
 
 export default class Board extends React.Component {
   constructor(props) {
@@ -11,13 +10,12 @@ export default class Board extends React.Component {
     let board = this.props.board;
 
     return (
-      <ul>
+      <ul className="grid">
         {board.grid.map((row, idx) => {
-          <br />;
           return (
-            <div>
+            <div className="row" key={idx}>
               {row.map((tile, j) => (
-                <Tile />
+                <Tile key={idx * 3 + j} tile={tile} updateGame={this.props.updateGame} />
               ))}
             </div>
           );
