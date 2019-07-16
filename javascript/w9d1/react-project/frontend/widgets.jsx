@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import Clock from "./clock";
+
 function App() {
   return (
     <div>
@@ -10,6 +11,5 @@ function App() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("root");
-  ReactDOM.render(<App />, root);
+  ReactDOM.render(<App />, document.getElementById("root"));
 });
