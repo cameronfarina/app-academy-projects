@@ -1,3 +1,59 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#root {
+    height: 100%;
+    padding-top: 20px;
+}
+
+.pokedex {
+  display: flex;
+  height: 100%;
+  padding: 0;
+  
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  border: 6px solid black;
+  margin: 10px 40px;
+  padding: 20px;
+  overflow: scroll;
+  background-color: #999999;
+}
+
+.pokemon-detail-image {
+  border: 4px solid black;
+  border-radius: 8px;
+  width: 80%;
+  padding: 20px;
+  max-height: 400px;
+  background: red;
+}
+
+.index-img {
+  width: 20px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.index-item {
+  padding: 5px 10px;
+  border-top: 1px solid grey;
+}
+
+.index-link {
+  text-decoration: none;
+}
+
+.pokedex>ol {
+    padding: 0 10px 0 0;
+    width: 300px;
+    height: calc(100% - 20px);
+    overflow: scroll;
+}
